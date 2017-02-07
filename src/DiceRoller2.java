@@ -27,18 +27,16 @@ public class DiceRoller2 {
 
     public static int RollDice (int die1, int die2) {
         Scanner scan = new Scanner(System.in);
-
+        int sides = 1;
         String choice = "y";
+        System.out.println(" HOW MANY SIDES SHOULD EACH DICES HAVE ");
+        sides = scan.nextInt();
         while (choice.equals("y")) {
 
-            int sides = 1;
-
-            System.out.println(" HOW MANY SIDES SHOULD EACH DICES HAVE ");
-            sides = scan.nextInt();
-
-
-            die1 = (int) (Math.random() * sides + 1);
-            die2 = (int) (Math.random() * sides + 1);
+            System.out.println("Roll");
+            die1 = roll(sides);
+            die2 = roll(sides);
+           // int dicThree = roll(7);
 
             System.out.println(die1);
             System.out.println(die2);
@@ -57,6 +55,8 @@ public class DiceRoller2 {
         return 6;
     }
 
-
+    public static int roll(int max) {
+        return (int) (Math.random() * max + 1);
+    }
 }
 
